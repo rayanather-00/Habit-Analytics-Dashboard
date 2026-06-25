@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
+</head>
+
+<body>
+    <h1 class="title">📅 Events Dashboard</h1>
+
+    <div class="book_mark" onclick="toggleSidebar()">
+        <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="">
+        <p class="pull">SideBar</p>
+    </div>
+
+    <div class="sub_header" id="sidebar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li><a href="{{ url_for('expenses') }}"> Expenses</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            <li><a href="{{ url_for('saved_links') }}">Saved Links</a></li>
+            <li><a href="{{ url_for('feed') }}"> Feed</a></li>
+            <li><a href="{{ url_for('events') }}"> Events</a></li>
+            <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
+            <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
+            <li>
+                <a href="settings.html" class="settings-btn">
+                    ⚙️ Settings
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="overlay"></div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2 id="totalEvents">0</h2>
+            <p>Total Events</p>
+        </div>
+
+        <div class="card">
+            <h2 id="upcomingEvents">0</h2>
+            <p>Upcoming</p>
+        </div>
+
+        <div class="card">
+            <h2 id="completedEvents">0</h2>
+            <p>Completed</p>
+        </div>
+
+        <div class="card">
+            <h2 id="overdueEvents">0</h2>
+            <p>Overdue</p>
+        </div>
+
+    </div>
+
+    <div class="hero-card">
+
+        <h2>📌 Next Event</h2>
+
+        <h3 id="nextEventTitle">
+            No Upcoming Event
+        </h3>
+
+        <p id="nextEventDate">
+            ---
+        </p>
+
+        <span id="daysLeft">
+            ---
+        </span>
+
+    </div>
+
+    <div class="event-form">
+
+        <h2>➕ Add Event</h2>
+
+        <input type="text" id="eventTitle" placeholder="Event Title">
+
+        <input type="date" id="eventDate">
+
+        <input type="time" id="eventTime">
+
+        <select id="eventPriority">
+            <option>High</option>
+            <option>Medium</option>
+            <option>Low</option>
+        </select>
+
+        <button id="addEventBtn">
+            Add Event
+        </button>
+
+    </div>
+
+    <div class="events-grid">
+
+        <div class="event-list">
+
+            <h2>🔥 Upcoming Events</h2>
+
+            <ul id="upcomingList">
+
+            </ul>
+
+        </div>
+
+        <div class="event-list">
+
+            <h2>❌ Overdue Events</h2>
+
+            <ul id="overdueList">
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="insights-card">
+
+        <h2>💡 Insights</h2>
+
+        <p id="busyDay">
+            Most Busy Day: ---
+        </p>
+
+        <p id="completionRate">
+            Completion Rate: ---
+        </p>
+
+    </div>
+     <script src="{{ url_for('static', filename='js/events.js') }}"></script>
+</body>
+
+</html>

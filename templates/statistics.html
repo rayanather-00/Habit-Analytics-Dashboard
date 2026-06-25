@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/statistics.css') }}">
+</head>
+<body>
+    <h1 class="title"> Statistics Dashboard </h1>
+    <div class="book_mark" onclick="toggleSidebar()">
+         <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="Unable to load">
+        <p class="pull">SideBar </p>
+    </div>
+
+ <div class="sub_header" id="sidebar">
+    <ul>
+            <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li><a href="{{ url_for('expenses') }}"> Expenses</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            <li><a href="{{ url_for('saved_links') }}">Saved Links</a></li>
+            <li><a href="{{ url_for('feed') }}"> Feed</a></li>
+            <li><a href="{{ url_for('events') }}"> Events</a></li>
+            <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
+            <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
+        <li class="settings-item">
+            <a href="settings.html" class="settings-btn">
+                ⚙️ Settings
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="overlay"></div>
+    <div class="cards">
+        <div class="card">
+            <h2 id="studyHours">27h</h2>
+            <p>Study Hours</p>
+        </div>
+        <div class="card">
+            <h2 id="streak">12 Days</h2>
+            <p> Current Streak</p>
+        </div>
+        <div class="card">
+            <h2 id="productivity">82%</h2>
+            <p>Productivity</p>
+        </div>
+        <div class="card">
+            <h2 id="bestDay">Tuesday</h2>
+            <p>Best Day</p>
+        </div>
+    </div>
+    <div class="graph-card">
+        <h2>Study Hours This Week</h2>
+        <div class="graph">
+            <div class="bar-box">
+                <div class="bar" style="height:60%"></div>
+                <span>Mon</span>
+            </div>
+            <div class="bar-box">
+                <div class="bar" style="height:80%"></div>
+                <span>Tue</span>
+            </div>
+            <div class="bar-box">
+                <div class="bar" style="height:45%"></div>
+                <span>Wed</span>
+            </div>
+            <div class="bar-box">
+                <div class="bar" style="height:70%"></div>
+                <span>Thu</span>
+            </div>
+            <div class="bar-box">
+                <div class="bar" style="height:35%"></div>
+                <span>Fri</span>
+            </div>
+            <div class="bar-box">
+                <div class="bar" style="height:85%"></div>
+                <span>Sat</span>
+            </div>
+            <div class="bar-box">
+                <div class="bar" style="height:65%"></div>
+                <span>Sun</span>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-section">
+        <div class="info-card">
+            <h2>Weekly Breakdown</h2>
+            <p>Coding: 14h</p>
+            <p>University: 8h</p>
+            <p>Reading: 5h</p>
+        </div>
+
+        <div class="info-card">
+            <h2>Insights</h2>
+            <p>You studied 4h more than last week.</p>
+            <p>Tuesday was your most productive day.</p>
+            <p>Only 3h left to reach your weekly goal.</p>
+        </div>
+    </div>
+     <script src="{{ url_for('static', filename='js/statistics.js') }}"></script>
+
+</body>
+</html>

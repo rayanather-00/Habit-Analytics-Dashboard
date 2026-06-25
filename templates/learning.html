@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/learning.css') }}">
+</head>
+
+<body>
+    <h1 class="title">📚 Learning Hub</h1>
+    <div id="overlay"></div>
+
+    <div class="book_mark" onclick="toggleSidebar()">
+         <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="Unable to load">
+        <p class="pull">SideBar</p>
+    </div>
+
+    <div class="sub_header" id="sidebar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li><a href="{{ url_for('expenses') }}"> Expenses</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            <li><a href="{{ url_for('saved_links') }}">Saved Links</a></li>
+            <li><a href="{{ url_for('feed') }}"> Feed</a></li>
+            <li><a href="{{ url_for('events') }}"> Events</a></li>
+            <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
+            <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
+            <li class="settings-item">
+                <a href="settings.html" class="settings-btn">
+                    ⚙️ Settings
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Quick Statistics -->
+    <section class="stats-section">
+
+        <div class="stat-card">
+            <h2 id="completedCourses">0</h2>
+            <p>Courses Completed</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="currentCourses">0</h2>
+            <p>Courses In Progress</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="revisionTopics">0</h2>
+            <p>Topics To Revise</p>
+        </div>
+
+        <div class="stat-card">
+            <h2 id="studyHours">0h</h2>
+            <p>Total Study Hours</p>
+        </div>
+
+    </section>
+
+    <!-- Current Learning -->
+    <section class="panel">
+
+        <h2>🎯 Currently Learning</h2>
+
+        <div class="input-row">
+            <input type="text" id="courseName" placeholder="Course Name">
+
+            <input <input type="number" id="courseHours" placeholder="Hours Studied">
+
+
+            <button id="addCourseBtn">
+                Add Course
+            </button>
+        </div>
+
+        <div id="currentCoursesList">
+
+            <!-- Example Card -->
+
+            <div class="course-card">
+
+                <div class="course-info">
+                    <h3>Python Essential Training</h3>
+                    <p>70% Complete</p>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+
+                <div class="course-buttons">
+                    <button>Update</button>
+                    <button>Complete</button>
+                    <button>Delete</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Revision Queue -->
+    <section class="panel">
+
+        <h2>🔄 Revision Queue</h2>
+
+        <div class="input-row">
+
+            <input type="text" id="revisionTopic" placeholder="Topic To Revise">
+
+            <select id="revisionPriority">
+
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+
+            </select>
+
+            <button id="addRevisionBtn">
+                Add Topic
+            </button>
+
+        </div>
+
+        <div id="revisionList">
+
+            <!-- Example -->
+
+            <div class="revision-card">
+
+                <div>
+                    <h3>Recursion</h3>
+                    <p>Priority: High</p>
+                </div>
+
+                <div class="course-buttons">
+                    <button>Mark Revised</button>
+                    <button>Delete</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Completed Archive -->
+    <section class="panel">
+
+        <h2>✅ Completed Archive</h2>
+
+        <div id="completedList">
+
+            <!-- Example -->
+
+            <div class="completed-card">
+
+                <div>
+                    <h3>HTML & CSS Basics</h3>
+                    <p>Completed: 23 June 2026</p>
+                    <p>Rating: ⭐⭐⭐⭐⭐</p>
+                </div>
+
+                <button>
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Learning Goals -->
+    <section class="panel">
+
+        <h2>🏆 Learning Goals</h2>
+
+        <div class="input-row">
+
+            <input type="text" id="goalInput" placeholder="Add Learning Goal">
+
+            <button id="addGoalBtn">
+                Add Goal
+            </button>
+
+        </div>
+
+        <ul id="goalList">
+
+            <li>
+                Finish NumPy & Pandas
+            </li>
+
+        </ul>
+
+    </section>
+
+    <!-- Favorite Resources -->
+    <section class="panel">
+
+        <h2>⭐ Favorite Resources</h2>
+
+        <div class="input-row">
+
+            <input type="text" id="resourceName" placeholder="Resource Name">
+
+            <input type="url" id="resourceLink" placeholder="Resource Link">
+
+            <button id="addResourceBtn">
+                Add Resource
+            </button>
+
+        </div>
+
+        <div id="resourceList">
+
+            <!-- Example -->
+
+            <div class="resource-card">
+
+                <h3>MDN Web Docs</h3>
+
+                <a href="#">
+                    Visit Resource
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+     <script src="{{ url_for('static', filename='js/learning.js') }}"></script>
+</body>
+
+</html>

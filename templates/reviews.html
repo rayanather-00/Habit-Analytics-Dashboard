@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Reviews</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reviews.css') }}">
+</head>
+<body>
+    <h1 class="title">
+        ⭐ Website Reviews
+    </h1>
+        <div id="overlay"></div>
+
+    <div class="book_mark" onclick="toggleSidebar()">
+         <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="Unable to load">
+        <p class="pull">sidebar</p>
+    </div>
+
+    <div class="sub_header" id="sidebar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li><a href="{{ url_for('expenses') }}"> Expenses</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            <li><a href="{{ url_for('saved_links') }}">Saved Links</a></li>
+            <li><a href="{{ url_for('feed') }}"> Feed</a></li>
+            <li><a href="{{ url_for('events') }}"> Events</a></li>
+            <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
+            <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
+            <li class="settings-item">
+                <a href="settings.html" class="settings-btn">
+                    ⚙️ Settings
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- OVERALL RATING -->
+    <section class="overall-section">
+
+        <div class="overall-card">
+
+            <h2>Overall Rating</h2>
+
+            <h1 id="overallRating">
+                0.0
+            </h1>
+
+            <div class="stars"
+                 id="overallStars">
+                ☆☆☆☆☆
+            </div>
+
+            <p id="totalReviews">
+                0 Reviews
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- REVIEW FORM -->
+    <section class="review-form-section">
+
+        <div class="review-form-card">
+
+            <h2>
+                Leave Your Review
+            </h2>
+
+            <input
+                type="text"
+                id="reviewerName"
+                placeholder="Your Name">
+
+            <!-- CATEGORY RATINGS -->
+            <div class="rating-grid">
+
+                <div class="rating-box">
+                    <label>
+                        Design
+                    </label>
+
+                    <input
+                        type="number"
+                        id="designRating"
+                        min="0"
+                        max="5"
+                        placeholder="0 - 5">
+                </div>
+
+                <div class="rating-box">
+                    <label>
+                        Features
+                    </label>
+
+                    <input
+                        type="number"
+                        id="featureRating"
+                        min="0"
+                        max="5"
+                        placeholder="0 - 5">
+                </div>
+
+                <div class="rating-box">
+                    <label>
+                        Performance
+                    </label>
+
+                    <input
+                        type="number"
+                        id="performanceRating"
+                        min="0"
+                        max="5"
+                        placeholder="0 - 5">
+                </div>
+
+                <div class="rating-box">
+                    <label>
+                        Ease of Use
+                    </label>
+
+                    <input
+                        type="number"
+                        id="easeRating"
+                        min="0"
+                        max="5"
+                        placeholder="0 - 5">
+                </div>
+
+            </div>
+
+            <!-- AUTO CALCULATED -->
+            <div class="your-rating">
+
+                <h3>
+                    Your Overall Rating
+                </h3>
+
+                <h1 id="yourRating">
+                    0.0
+                </h1>
+
+                <div id="yourStars">
+                    ☆☆☆☆☆
+                </div>
+
+            </div>
+
+            <!-- COMMENT -->
+            <textarea
+                id="reviewComment"
+                placeholder=
+                "Tell us what you liked and what can be improved..."
+                rows="6">
+            </textarea>
+
+            <button id="submitReviewBtn">
+                Submit Review
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ALL REVIEWS -->
+    <section class="all-reviews">
+
+        <h2>
+            Community Reviews
+        </h2>
+
+        <div id="reviewsContainer">
+
+            <!-- JS will create review cards here -->
+
+        </div>
+
+    </section>
+     <script src="{{ url_for('static', filename='js/reviews.js') }}"></script>
+</body>
+</html>

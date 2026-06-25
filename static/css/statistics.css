@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4c1d95,
+            #7c3aed,
+            #2563eb
+        );
+
+    padding: 50px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    font-size: 45px;
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            #c084fc
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+.card {
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    color: white;
+    text-align: center;
+
+    box-shadow:
+        0 0 20px rgba(124,58,237,0.4);
+
+    transition: .4s;
+}
+
+.card:hover {
+    transform:
+        translateY(-10px)
+        scale(1.03);
+
+    box-shadow:
+        0 0 40px rgba(124,58,237,0.7);
+}
+
+.card h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.graph-card {
+    margin-top: 50px;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    color: white;
+}
+
+.graph-card h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.graph {
+    height: 350px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.bar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bar {
+    width: 50px;
+
+    background:
+        linear-gradient(
+            to top,
+            #7c3aed,
+            #c084fc,
+            white
+        );
+
+    border-radius: 20px 20px 0 0;
+
+    box-shadow:
+        0 0 20px rgba(124,58,237,0.6);
+
+    transition: .5s;
+}
+
+.bar:hover {
+    transform:
+        scaleY(1.08);
+}
+
+.bar-box span {
+    margin-top: 15px;
+    color: white;
+}
+
+.bottom-section {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.info-card {
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    color: white;
+
+    box-shadow:
+        0 0 20px rgba(124,58,237,0.3);
+}
+
+.info-card h2 {
+    margin-bottom: 25px;
+}
+
+.info-card p {
+    margin: 18px 0;
+    font-size: 18px;
+}
+/* Bookmark */
+.book_mark {
+    position: fixed;
+    top: 25px;
+    /* left: 25px; */
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2000;
+}
+.book_mark img {
+    width: 80px;
+    height: 80px;
+    transition: 0.4s;
+    filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.6));
+}
+.book_mark img:hover {
+    transform: scale(1.15);
+}
+.pull {
+    font-size: 14px;
+    color: #c084fc;
+    margin-top: 5px;
+    text-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
+}
+.pull:hover {
+    color: rgb(225, 151, 3);
+}
+#overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+
+    z-index: 1500;
+}
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* SUB_HEADER */
+.sub_header ul{
+   display: flex;
+   justify-content: space-around;
+}
+.sub_header {
+    position: fixed;
+    top: 0;
+    left: -280px;
+
+    width: 260px;
+    height: 100vh;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(
+        180deg,
+        rgba(10,10,20,0.98),
+        rgba(46,16,101,0.95),
+        rgba(124,58,237,0.90)
+    );
+
+    border-right: 2px solid rgba(218,165,32,0.4);
+
+    box-shadow:
+        10px 0 40px rgba(0,0,0,0.5),
+        0 0 30px rgba(124,58,237,0.4);
+
+    transition: left 0.3s ease;
+
+    z-index: 1600;
+}
+
+.sub_header.active {
+    left: 0;
+}
+
+/* UL FIX (important — removes flex bug) */
+.sub_header ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 0;
+    margin-top: 50px;
+}
+
+/* LINKS */
+.sub_header li a {
+    display: block;
+    padding: 12px;
+
+    text-decoration: none;
+    color: white;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.06);
+
+    transition: 0.3s;
+}
+
+.sub_header li a:hover {
+    background: rgba(124,58,237,0.35);
+    transform: translateX(8px);
+}
+
+/* SETTINGS BUTTON */
+.settings-btn {
+    display: block;
+    text-align: center;
+
+    padding: 12px;
+    margin-top: 15px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+
+    color: #1e1b4b;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    box-shadow: 0 0 15px rgba(245,158,11,0.5);
+}
+.settings-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.8);
+}
+.settings-btn:active {
+    transform: scale(0.97);
+}
+.sub_header a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.sub_header a:hover {
+    background: rgba(124, 58, 237, 0.25);
+    transform: translateX(8px);
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+}

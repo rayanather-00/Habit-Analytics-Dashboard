@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>saved links</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/saved-links.css') }}">
+</head>
+<body>
+    <h1 class="title">🔖 Saved Links Vault</h1>
+
+<!-- BOOKMARK BUTTON -->
+<div class="book_mark" onclick="toggleSidebar()">
+     <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="Unable to load">
+    <p class="pull">SideBar</p>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sub_header" id="sidebar">
+    <ul>
+            <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li><a href="{{ url_for('expenses') }}"> Expenses</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            <li><a href="{{ url_for('saved_links') }}">Saved Links</a></li>
+            <li><a href="{{ url_for('feed') }}"> Feed</a></li>
+            <li><a href="{{ url_for('events') }}"> Events</a></li>
+            <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
+            <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
+        <li class="settings-item">
+            <a href="settings.html" class="settings-btn">
+                ⚙️ Settings
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay"></div>
+
+<!-- MAIN -->
+<div class="container">
+
+    <!-- ADD LINK -->
+    <div class="add-box">
+        <h2>➕ Add New Link</h2>
+
+        <input type="text" id="linkTitle" placeholder="Link Title">
+        <input type="text" id="linkURL" placeholder="https://example.com">
+
+        <button onclick="addLink()">Save Link</button>
+    </div>
+
+    <!-- LIST -->
+    <div class="links">
+        <h2>🔗 Your Links</h2>
+        <div id="linkList"></div>
+    </div>
+
+</div>
+     <script src="{{ url_for('static', filename='js/saved-links.js') }}"></script>
+</body>
+</html>

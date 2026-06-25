@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/documents.css') }}">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <h1 class="title">📂 Documents Vault</h1>
+
+    <!-- BOOKMARK -->
+    <div class="book_mark" onclick="toggleSidebar()">
+        <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="Unable to load">
+        <p class="pull">SideBar</p>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sub_header" id="sidebar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li><a href="{{ url_for('expenses') }}"> Expenses</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            <li><a href="{{ url_for('saved_links') }}">Saved Links</a></li>
+            <li><a href="{{ url_for('feed') }}"> Feed</a></li>
+            <li><a href="{{ url_for('events') }}"> Events</a></li>
+            <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
+            <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
+            <li class="settings-item">
+                <a href="settings.html" class="settings-btn">
+                    ⚙️ Settings
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- OVERLAY -->
+    <div id="overlay"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- ADD DOCUMENT -->
+        <div class="add-box">
+            <h2>➕ Add New Document</h2>
+
+            <input type="text" id="docTitle" placeholder="Document Title">
+            <textarea id="docContent" placeholder="Write your document..."></textarea>
+
+            <button onclick="addDocument()">Save Document</button>
+        </div>
+
+        <!-- DOCUMENT LIST -->
+        <div class="docs">
+            <h2>📁 Your Documents</h2>
+            <div id="docList"></div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/documents.js') }}"></script>
+</body>
+
+</html>

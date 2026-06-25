@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Habit Analytics Dashboard</h1>
+        <img src="{{ url_for('static', filename='imagines/ping pong.png') }}" alt="Unable to load">
+    </div>
+
+    <div class="book_mark" onclick="toggleSidebar()">
+        <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="Unable to load">
+        <p class="pull">Dashboard </p>
+    </div>
+
+    <div class="sub_header" id="sidebar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li><a href="{{ url_for('expenses') }}"> Expenses</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            <li><a href="{{ url_for('saved_links') }}">Saved Links</a></li>
+            <li><a href="{{ url_for('feed') }}"> Feed</a></li>
+            <li><a href="{{ url_for('events') }}"> Events</a></li>
+            <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
+            <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
+            <button class="settings-btn" onclick="openSettings()">
+                ⚙️ Settings
+            </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="home-container">
+        <div class="clock-section">
+            <div id="clock">00:00:00</div>
+            <h2 id="greeting">Good Evening Rayan!</h2>
+            <div class="info">
+                <div id="day"></div>
+            </div>
+        </div>
+
+        <div class="task-card">
+            <h3>Daily Tasks</h3>
+            <p>Tasks Today</p>
+            <p>Streak: 7 Days</p>
+        </div>
+        <div class="overlay" id="overlay">
+            <div class="task-popup">
+                <button id="closeBtn">✕</button>
+                <h2>Daily Tasks</h2>
+                <ul>
+                    <li>
+                        <input type="checkbox"> Study Python
+                    </li>
+                    <li>
+                        <input type="checkbox"> Exercise
+                    </li>
+                </ul>
+                <button class="add-task-btn">
+                    + Add New Task
+                </button>
+
+                <div class="future-task">
+                    <h3>Schedule Task</h3>
+                    <input type="date">
+                </div>
+
+                <h3>Streak: 7 Days</h3>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <div class="settings-popup" id="settingsPopup">
+
+        <h2>⚙️ Settings</h2>
+
+        <div class="setting-row">
+            <span>Dark Mode</span>
+
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <button class="close-settings" onclick="closeSettings()">
+            Close
+        </button>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+
+</html>

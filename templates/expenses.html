@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/expenses.css') }}">
+</head>
+
+<body>
+    <h1 class="title">💰 Expenses Dashboard</h1>
+
+    <div class="book_mark" onclick="toggleSidebar()">
+        <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="">
+        <p class="pull">Dashboard</p>
+    </div>
+
+    <div class="sub_header" id="sidebar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('statistics') }}">Statistics</a></li>
+            <li><a href="{{ url_for('expenses') }}"> Expenses</a></li>
+            <li><a href="{{ url_for('documents') }}">Documents</a></li>
+            <li><a href="{{ url_for('saved_links') }}">Saved Links</a></li>
+            <li><a href="{{ url_for('feed') }}"> Feed</a></li>
+            <li><a href="{{ url_for('events') }}"> Events</a></li>
+            <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
+            <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
+
+            <li>
+                <a href="settings.html" class="settings-btn">
+                    ⚙️ Settings
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="overlay"></div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2 id="totalExpenses">Rs. 12,450</h2>
+            <p>Total Expenses</p>
+        </div>
+
+        <div class="card">
+            <h2 id="weekExpense">Rs. 2,100</h2>
+            <p>This Week</p>
+        </div>
+
+        <div class="card">
+            <h2 id="todayExpense">Rs. 450</h2>
+            <p>Today</p>
+        </div>
+
+        <div class="card">
+            <h2 id="averageExpense">Rs. 300</h2>
+            <p>Average Daily</p>
+        </div>
+
+    </div>
+
+    <div class="budget-card">
+
+        <h2>🎯 Monthly Budget</h2>
+
+        <p>Budget: Rs. 20,000</p>
+        <p>Spent: Rs. 12,450</p>
+
+        <div class="progress">
+            <div class="progress-fill"></div>
+        </div>
+
+    </div>
+
+    <div class="expense-form">
+
+        <h2>➕ Add Expense</h2>
+
+        <input type="text" id="expenseName" placeholder="Expense Name">
+
+        <input type="number" id="expenseAmount" placeholder="Amount">
+
+        <select id="expenseCategory">
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Education</option>
+            <option>Entertainment</option>
+            <option>Shopping</option>
+            <option>Other</option>
+        </select>
+        <button id="addExpenseBtn">
+            Add Expense
+        </button>
+    </div>
+
+    <div class="main-section">
+        <div class="breakdown-card">
+            <h2>📊 Expense Breakdown</h2>
+
+            <div class="category">
+                <span>🍔 Food</span>
+                <div class="bar-bg">
+                    <div class="bar-fill food"></div>
+                </div>
+            </div>
+
+            <div class="category">
+                <span>🚌 Transport</span>
+                <div class="bar-bg">
+                    <div class="bar-fill transport"></div>
+                </div>
+            </div>
+
+            <div class="category">
+                <span>📚 Education</span>
+                <div class="bar-bg">
+                    <div class="bar-fill education"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-card">
+            <h2>📜 Recent Expenses</h2>
+            <ul id="expenseList">
+            </ul>
+        </div>
+    </div>
+
+    <div class="insights-card">
+        <h2>💡 Insights</h2>
+        <p>Most spending this month was on Food.</p>
+        <p>Average daily spending is Rs.300.</p>
+        <p>38% of monthly budget remains.</p>
+    </div>
+     <script src="{{ url_for('static', filename='js/expenses.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,344 @@
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px;
+    color: white;
+
+    background: linear-gradient(135deg, #4c1d95, #7c3aed, #2563eb);
+}
+
+/* =========================
+   TITLE
+========================= */
+.title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+
+    background: linear-gradient(90deg, #fff, #c084fc, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    letter-spacing: 2px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 30px;
+}
+
+/* =========================
+   LEFT PANEL (INPUT)
+========================= */
+.add-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+
+    padding: 25px;
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+
+    transition: 0.3s;
+}
+
+.add-box:hover {
+    transform: translateY(-5px);
+}
+
+/* INPUTS */
+.add-box input,
+.add-box select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+
+    outline: none;
+}
+
+.add-box input:focus,
+.add-box select:focus {
+    border-color: #c084fc;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+}
+
+/* HEADINGS */
+.add-box h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #c084fc;
+}
+
+/* BUTTON */
+.add-box button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    color: #1e1b4b;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.add-box button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+.feed-box {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+
+    padding: 25px;
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+
+    overflow-y: auto;
+    max-height: 85vh;
+}
+
+/* SECTION HEADINGS */
+.feed-box h2 {
+    margin: 25px 0 15px;
+    padding-left: 10px;
+
+    border-left: 4px solid #c084fc;
+    color: white;
+}
+
+/* =========================
+   ENTRY CARD (MAIN ITEMS)
+========================= */
+.entry-card {
+    display: flex;
+    gap: 15px;
+
+    padding: 15px;
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+.entry-card:hover {
+    transform: translateX(6px);
+    background: rgba(124, 58, 237, 0.3);
+}
+
+/* COVER IMAGE */
+.entry-card img {
+    width: 85px;
+    height: 120px;
+
+    border-radius: 10px;
+    object-fit: cover;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* INFO */
+.entry-info h3 {
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.entry-info p {
+    font-size: 13px;
+    color: #d1d1d1;
+    margin: 3px 0;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+.delete-btn {
+    margin-top: 8px;
+    padding: 6px 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #ef4444;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background: #ff2d2d;
+    transform: scale(1.05);
+}
+
+/* =========================
+   TOP 3 SECTION
+========================= */
+#top3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* TOP CARD */
+.top-card {
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+
+    padding: 10px;
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.top-card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 20px rgba(124,58,237,0.5);
+}
+
+.top-card img {
+    width: 100%;
+    height: 130px;
+
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.book_mark {
+    position: fixed;
+    top: 20px;
+    right: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.book_mark img {
+    width: 80px;
+    transition: 0.4s;
+    filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.6));
+}
+
+.book_mark img:hover {
+    transform: scale(1.15) rotate(4deg);
+}
+
+.pull {
+    font-size: 13px;
+    color: #c084fc;
+    margin-top: 5px;
+}
+
+/* SIDEBAR PANEL */
+.sub_header {
+    position: fixed;
+    top: 0;
+    left: -280px;
+
+    width: 260px;
+    height: 100vh;
+
+    background: rgba(10,10,20,0.95);
+    backdrop-filter: blur(10px);
+
+    padding: 20px;
+    transition: 0.3s;
+    z-index: 1600;
+}
+
+.sub_header.active {
+    left: 0;
+}
+
+.sub_header ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 50px;
+}
+
+.sub_header a {
+    display: block;
+    padding: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+
+    transition: 0.3s;
+}
+
+.sub_header a:hover {
+    background: rgba(124,58,237,0.3);
+    transform: translateX(6px);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+#overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 1500;
+}
+
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
