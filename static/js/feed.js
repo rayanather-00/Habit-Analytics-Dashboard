@@ -1,8 +1,5 @@
 
-// =========================
-// SIDEBAR
-// =========================
-
+// sidebar
 function toggleSidebar() {
     document.getElementById("sidebar").classList.toggle("active");
     document.getElementById("overlay").classList.toggle("active");
@@ -12,21 +9,11 @@ document.getElementById("overlay").addEventListener("click", () => {
     document.getElementById("sidebar").classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
 });
-
-
-// =========================
-// STORAGE
-// =========================
-
+// storage
 let feed = JSON.parse(localStorage.getItem("feed")) || [];
 
 renderAll();
-
-
-// =========================
 // ADD ENTRY
-// =========================
-
 function addEntry() {
 
     let type = document.getElementById("type").value;
