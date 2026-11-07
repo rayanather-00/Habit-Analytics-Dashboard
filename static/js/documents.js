@@ -16,20 +16,14 @@ document.getElementById("overlay")
             .classList.remove("active");
     });
 
-/////////////////////////////////////////////////
 // DOCUMENT STORAGE
-/////////////////////////////////////////////////
-
 let docs = JSON.parse(
     localStorage.getItem("docs")
 ) || [];
 
 renderDocs();
 
-/////////////////////////////////////////////////
 // ADD DOCUMENT
-/////////////////////////////////////////////////
-
 function addDocument() {
 
     let title =
@@ -53,10 +47,7 @@ function addDocument() {
     document.getElementById("docContent").value = "";
 }
 
-/////////////////////////////////////////////////
 // DELETE DOCUMENT
-/////////////////////////////////////////////////
-
 function deleteDocument(index) {
 
     docs.splice(index, 1); // remove item
@@ -65,10 +56,7 @@ function deleteDocument(index) {
     renderDocs();
 }
 
-/////////////////////////////////////////////////
 // SAVE TO LOCALSTORAGE
-/////////////////////////////////////////////////
-
 function saveDocs() {
     localStorage.setItem(
         "docs",
@@ -76,10 +64,7 @@ function saveDocs() {
     );
 }
 
-/////////////////////////////////////////////////
 // RENDER DOCUMENTS
-/////////////////////////////////////////////////
-
 function renderDocs() {
 
     let list =
