@@ -10,7 +10,7 @@
 
 <body>
 
-    <h1 class="title">🎬 Feed Tracker</h1>
+    <h1 class="title">Feed Tracker</h1>
 
     <!-- SIDEBAR BUTTON -->
     <div class="book_mark" onclick="toggleSidebar()">
@@ -31,9 +31,7 @@
             <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
             <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
             <li class="settings-item">
-                <a href="settings.html" class="settings-btn">
-                    ⚙️ Settings
-                </a>
+                <a href="settings.html" class="settings-btn"> Settings </a>
             </li>
         </ul>
     </div>
@@ -60,7 +58,7 @@
             <!-- COVER IMAGE FILE -->
             <input type="file" id="coverFile" accept="image/*">
 
-            <h3>⭐ Ratings (1–5)</h3>
+            <h3>Ratings (1–5)</h3>
 
             <input type="text" id="character" placeholder="Character (0-5)">
             <input type="text" id="pacing" placeholder="Pacing (0-5)">
@@ -73,13 +71,13 @@
         <!-- RIGHT: DISPLAY -->
         <div class="feed-box">
 
-            <h2>🏆 Top 3 Watched</h2>
+            <h2> Top 3 Watched</h2>
             <div id="top3"></div>
 
-            <h2>🎬 Watched</h2>
+            <h2> Watched</h2>
             <div id="watchedList"></div>
 
-            <h2>📖 To Watch</h2>
+            <h2>To Watch</h2>
             <div id="watchList"></div>
 
         </div>
