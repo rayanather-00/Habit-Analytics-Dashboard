@@ -62,10 +62,7 @@ taskCard.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
-/////////////////////////////////////////////////
-// OPEN SETTINGS
-/////////////////////////////////////////////////
-
+// open storage
 function openSettings(){
 
     document
@@ -85,10 +82,7 @@ function openSettings(){
         );
 }
 
-/////////////////////////////////////////////////
-// CLOSE SETTINGS
-/////////////////////////////////////////////////
-
+// close settings
 function closeSettings(){
 
     document
@@ -107,10 +101,7 @@ function closeSettings(){
             "active"
         );
 }
-
-/////////////////////////////////////////////////
 // CLOSE ON OUTSIDE CLICK
-/////////////////////////////////////////////////
 
 document
     .getElementById(
@@ -120,10 +111,7 @@ document
         "click",
         closeSettings
     );
-
-/////////////////////////////////////////////////
 // DARK MODE
-/////////////////////////////////////////////////
 
 const toggle =
     document.getElementById(
