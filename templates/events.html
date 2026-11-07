@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1 class="title">📅 Events Dashboard</h1>
+    <h1 class="title">Events Dashboard</h1>
 
     <div class="book_mark" onclick="toggleSidebar()">
         <img src="{{ url_for('static', filename='imagines/button bc.png') }}" alt="">
@@ -29,7 +29,7 @@
             <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
             <li>
                 <a href="settings.html" class="settings-btn">
-                    ⚙️ Settings
+                    Settings
                 </a>
             </li>
         </ul>
@@ -63,7 +63,7 @@
 
     <div class="hero-card">
 
-        <h2>📌 Next Event</h2>
+        <h2> Next Event</h2>
 
         <h3 id="nextEventTitle">
             No Upcoming Event
@@ -81,7 +81,7 @@
 
     <div class="event-form">
 
-        <h2>➕ Add Event</h2>
+        <h2> Add Event</h2>
 
         <input type="text" id="eventTitle" placeholder="Event Title">
 
@@ -95,17 +95,14 @@
             <option>Low</option>
         </select>
 
-        <button id="addEventBtn">
-            Add Event
-        </button>
-
+        <button id="addEventBtn">  Add Event  </button>
     </div>
 
     <div class="events-grid">
 
         <div class="event-list">
 
-            <h2>🔥 Upcoming Events</h2>
+            <h2> Upcoming Events</h2>
 
             <ul id="upcomingList">
 
@@ -115,7 +112,7 @@
 
         <div class="event-list">
 
-            <h2>❌ Overdue Events</h2>
+            <h2>Overdue Events</h2>
 
             <ul id="overdueList">
 
@@ -127,7 +124,7 @@
 
     <div class="insights-card">
 
-        <h2>💡 Insights</h2>
+        <h2> Insights</h2>
 
         <p id="busyDay">
             Most Busy Day: ---
