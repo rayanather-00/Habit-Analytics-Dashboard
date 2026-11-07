@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/saved-links.css') }}">
 </head>
 <body>
-    <h1 class="title">🔖 Saved Links Vault</h1>
+    <h1 class="title"> Saved Links Vault</h1>
 
 <!-- BOOKMARK BUTTON -->
 <div class="book_mark" onclick="toggleSidebar()">
@@ -28,9 +28,7 @@
             <li><a href="{{ url_for('learning') }}"> Learning Hub</a></li>
             <li><a href="{{url_for('reviews')}}">Website Reviews</a></li>
         <li class="settings-item">
-            <a href="settings.html" class="settings-btn">
-                ⚙️ Settings
-            </a>
+            <a href="settings.html" class="settings-btn"> Settings </a>
         </li>
     </ul>
 </div>
@@ -43,7 +41,7 @@
 
     <!-- ADD LINK -->
     <div class="add-box">
-        <h2>➕ Add New Link</h2>
+        <h2> Add New Link</h2>
 
         <input type="text" id="linkTitle" placeholder="Link Title">
         <input type="text" id="linkURL" placeholder="https://example.com">
@@ -53,7 +51,7 @@
 
     <!-- LIST -->
     <div class="links">
-        <h2>🔗 Your Links</h2>
+        <h2>Your Links</h2>
         <div id="linkList"></div>
     </div>
 
